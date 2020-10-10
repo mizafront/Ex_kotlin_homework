@@ -10,6 +10,6 @@ fun main() {
     } else {
         input = input * 100
         amount = (input * 100 * 0.075).toInt()
-        println("При переводе " + input + " к. с коммисией " + amount)
+        println("При переводе $input к. с коммисией $amount")
     }
 }
