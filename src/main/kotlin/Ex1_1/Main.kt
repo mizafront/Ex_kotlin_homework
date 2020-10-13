@@ -1,16 +1,19 @@
 package Ex1_1
 fun main() {
-    println("Введите сумму перевода (От 35р.)")
+    println("Введите сумму перевода ")
 
     var amount: Int
-    val input = readLine()!!.toInt()
+    val sum = readLine()!!.toInt()
 
-    if ((input * 100 ) < 3500){
-        amount = input * 100 + 3500
-    }else{
-        amount = (input * 100 * 0.075).toInt()
-        amount += input * 100
+    when {
+        sum < 35 -> {  // Проверка на перевод, если меньше 35р. то коммисия 35р, иначе 0.75%
+             amount = sum * 100 + 3500
+         }
+        else -> {
+            amount = (sum * 100 * 0.0075).toInt()
+            amount += sum * 100
+        }
     }
-    print(println("При переводе ${input * 100}  коп. перевод с коммисией $amount  коп."))
+    print(println("При переводе ${sum * 100}  коп. перевод с коммисией $amount  коп."))
 
 }
