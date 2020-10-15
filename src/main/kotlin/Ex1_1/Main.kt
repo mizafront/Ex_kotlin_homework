@@ -4,13 +4,14 @@ fun main() {
 
     var amount: Int
     val sum = readLine()!!.toInt()
+    amount = (sum * 100 * 0.0075).toInt()
+
 
     when {
-        sum < 35 -> {  // Проверка на перевод, если меньше 35р. то коммисия 35р, иначе 0.75%
+        amount < 3500 -> {
              amount = sum * 100 + 3500
          }
         else -> {
-            amount = (sum * 100 * 0.0075).toInt()
             amount += sum * 100
         }
     }
